@@ -20,6 +20,7 @@ function AuthRegister() {
 
   function onSubmit(event) {
     event.preventDefault();
+    // Make sure formData has the correct values before dispatch
     dispatch(registerUser(formData)).then((data) => {
       if (data?.payload?.success) {
         toast({
