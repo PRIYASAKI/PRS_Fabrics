@@ -57,4 +57,9 @@ app.use("/api/shop/review", shopReviewRouter);
 
 app.use("/api/common/feature", commonFeatureRouter);
 
+// Add a basic root route
+app.get("/", (req, res) => {
+  res.send("Backend server is running");
+});
+
 app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`));
