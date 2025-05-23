@@ -11,6 +11,12 @@ const router = express.Router();
 router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.post("/logout", logoutUser);
+
+// Temporary GET route for testing (not for real login)
+router.get("/login", (req, res) => {
+  res.send("Login route is working, but use POST instead.");
+});
+
 router.get("/check-auth", authMiddleware, (req, res) => {
   const user = req.user;
   res.status(200).json({

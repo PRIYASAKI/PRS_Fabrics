@@ -26,6 +26,7 @@ export const registerUser = createAsyncThunk(
 export const loginUser = createAsyncThunk(
   "/auth/login",
   async (formData) => {
+    console.log("API_BASE:", API_BASE); // Add this line for debugging
     const response = await axios.post(
       `${API_BASE}/api/auth/login`,
       formData,

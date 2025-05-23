@@ -64,7 +64,8 @@ const updateOrderStatus = async (req, res) => {
       });
     }
 
-    await Order.findByIdAndUpdate(id, { orderStatus });
+    order.orderStatus = orderStatus;
+    await order.save();
 
     res.status(200).json({
       success: true,

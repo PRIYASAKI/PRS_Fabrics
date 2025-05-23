@@ -55,6 +55,7 @@ function CheckAuth({ isAuthenticated, user, children }) {
     return <Navigate to="/admin/dashboard" />;
   }
 
+  // Only render children if all checks pass
   return <>{children}</>;
 }
 
