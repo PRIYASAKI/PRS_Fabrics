@@ -20,6 +20,22 @@ const createOrder = async (req, res) => {
       cartId,
     } = req.body;
 
+    // Validate required fields
+    if (
+      !userId ||
+      !cartItems ||
+      !Array.isArray(cartItems) ||
+      cartItems.length === 0 ||
+      !addressInfo ||
+      !paymentMethod ||
+      !totalAmount
+    ) {
+      return res.status(400).json({
+        success: false,
+        message: "Missing required fields for order creation.",
+      });
+    }
+
     const create_payment_json = {
       intent: "sale",
       payer: {
