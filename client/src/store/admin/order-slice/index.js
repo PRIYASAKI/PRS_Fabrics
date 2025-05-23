@@ -1,8 +1,7 @@
 // src/store/admin/order-slice/index.js
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-
-const API_BASE = process.env.REACT_APP_API_URL;
+import API_BASE from "@/config/api";
 
 // Mock data for development (if API is not yet available)
 const mockMonthlyData = [
